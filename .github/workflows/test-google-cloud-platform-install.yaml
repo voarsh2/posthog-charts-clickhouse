@@ -177,7 +177,7 @@ jobs:
     #
     # TODO: the GCE Ingress is not picking up health check from readiness probe definition and it's using '/'
     # instead. We need to fix this issue before being able to enable the k6 ingestion test
-    # See WIP at https://github.com/PostHog/charts-clickhouse/pull/209
+    # See WIP at https://github.com/voarsh2/charts-clickhouse/pull/209
     #
     # - name: Run ingestion test using k6
     #   uses: k6io/action@v0.2.0

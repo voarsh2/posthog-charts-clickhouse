@@ -6,8 +6,8 @@ If there are changes you need, please raise a PR or [reach out on Slack](https:/
 
 # PostHog Helm Chart
 
-[![Latest release of the Helm chart](https://img.shields.io/badge/dynamic/yaml.svg?label=Helm%20chart%20version&url=https://posthog.github.io/charts-clickhouse/index.yaml&query=$.entries.posthog[:1].version&logo=helm)](https://github.com/PostHog/charts-clickhouse)
-[![Latest release app version](https://img.shields.io/badge/dynamic/yaml.svg?label=App%20version&url=https://posthog.github.io/charts-clickhouse/index.yaml&query=$.entries.posthog[:1].appVersion)](https://github.com/PostHog/posthog)
+[![Latest release of the Helm chart](https://img.shields.io/badge/dynamic/yaml.svg?label=Helm%20chart%20version&url=https://voarsh2.github.io/posthog-charts-clickhouse/index.yaml&query=$.entries.posthog[:1].version&logo=helm)](https://github.com/voarsh2/charts-clickhouse)
+[![Latest release app version](https://img.shields.io/badge/dynamic/yaml.svg?label=App%20version&url=https://voarsh2.github.io/posthog-charts-clickhouse/index.yaml&query=$.entries.posthog[:1].appVersion)](https://github.com/PostHog/posthog)
 [![MIT License](https://img.shields.io/badge/License-MIT-red.svg?style=flat-square)](https://opensource.org/licenses/MIT)
 [![Slack](https://img.shields.io/badge/PostHog_chat-slack-blue?logo=slack)](https://posthog.com/slack)
 
@@ -45,7 +45,7 @@ We use `helm lint` that can be invoked via: `helm lint --strict --set “cloud=l
 #### Unit tests
 In order to run the test suite, you need to install the `helm-unittest` plugin. You can do that by running: `helm plugin install https://github.com/quintush/helm-unittest --version 0.2.8`
 
-For more information about how it works and how to write test cases, please look at the upstream [documentation](https://github.com/quintush/helm-unittest/blob/master/README.md) or to the [tests already available in this repo](https://github.com/PostHog/charts-clickhouse/tree/main/charts/posthog/tests).
+For more information about how it works and how to write test cases, please look at the upstream [documentation](https://github.com/quintush/helm-unittest/blob/master/README.md) or to the [tests already available in this repo](https://github.com/voarsh2/charts-clickhouse/tree/main/charts/posthog/tests).
 
 To run the test suite you can execute: `helm unittest --helm3 --strict --file 'tests/*.yaml' --file 'tests/clickhouse-operator/*.yaml' charts/posthog`
 
@@ -56,10 +56,10 @@ helm unittest --helm3 --strict --file 'tests/*.yaml' --file 'tests/**/*.yaml' ch
 ```
 
 #### Integration tests
-- [kubetest](https://github.com/PostHog/charts-clickhouse/tree/main/ci/kubetest): to verify if applying the rendered Helm templates against a Kubernetes target cluster gives us the stack we expect (example: are the disks encrypted? Can this pod communicate with this service?)
-- [k6](https://github.com/PostHog/charts-clickhouse/tree/main/ci/k6): HTTP test used to verify the reliability, performance and compliance of the PostHog installation (example: is the PostHog ingestion working correctly?)
-- [e2e - k3s](https://github.com/PostHog/charts-clickhouse/tree/main/.github/workflows/test-helm-chart.yaml): to verify Helm install/upgrade commands on a local k3s cluster
-- [e2e - Amazon Web Services](https://github.com/PostHog/charts-clickhouse/tree/main/.github/workflows/test-amazon-web-services-install.yaml), [e2e - DigitalOcean](https://github.com/PostHog/charts-clickhouse/tree/main/.github/workflows/test-digitalocean-install.yaml), [e2e - Google Cloud Platform](https://github.com/PostHog/charts-clickhouse/tree/main/.github/workflows/test-google-cloud-platform-install.yaml): to verify Helm install command on the officially supported cloud platforms
+- [kubetest](https://github.com/voarsh2/charts-clickhouse/tree/main/ci/kubetest): to verify if applying the rendered Helm templates against a Kubernetes target cluster gives us the stack we expect (example: are the disks encrypted? Can this pod communicate with this service?)
+- [k6](https://github.com/voarsh2/charts-clickhouse/tree/main/ci/k6): HTTP test used to verify the reliability, performance and compliance of the PostHog installation (example: is the PostHog ingestion working correctly?)
+- [e2e - k3s](https://github.com/voarsh2/charts-clickhouse/tree/main/.github/workflows/test-helm-chart.yaml): to verify Helm install/upgrade commands on a local k3s cluster
+- [e2e - Amazon Web Services](https://github.com/voarsh2/charts-clickhouse/tree/main/.github/workflows/test-amazon-web-services-install.yaml), [e2e - DigitalOcean](https://github.com/voarsh2/charts-clickhouse/tree/main/.github/workflows/test-digitalocean-install.yaml), [e2e - Google Cloud Platform](https://github.com/voarsh2/charts-clickhouse/tree/main/.github/workflows/test-google-cloud-platform-install.yaml): to verify Helm install command on the officially supported cloud platforms
 
 
 ### Running k3s for tests locally
@@ -100,7 +100,7 @@ To release a new chart, bump the `version` in `charts/posthog/Chart.yaml`. We us
 Read API here as the chart values interface. When increasing the MAJOR version, ensure to add
 appropriate documentation to the [Upgrade notes](https://posthog.com/docs/runbook/upgrade-notes).
 
-Charts are [published on push](https://github.com/PostHog/charts-clickhouse/blob/main/.github/workflows/release-chart.yml)
+Charts are [published on push](https://github.com/voarsh2/charts-clickhouse/blob/main/.github/workflows/release-chart.yml)
 to the `main` branch.
 
 Note that development charts are also released on PRs such that changes can be tested as required

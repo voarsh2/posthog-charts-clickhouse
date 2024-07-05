@@ -7,7 +7,7 @@ on:
       - .github/workflows/release-chart.yaml
   push:
     branches:
-      - main
+      - local
 
 jobs:
   release:
@@ -51,4 +51,4 @@ jobs:
           CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
           CR_SKIP_EXISTING: "true"
         with:
-          charts_repo_url: "https://posthog.github.io/charts-clickhouse/"
+          charts_repo_url: "https://voarsh2.github.io/posthog-charts-clickhouse/"

@@ -7,7 +7,7 @@ metadata:
     # Install this last as we need 'cert-manager's CDRs API
     # to be installed first.
     #
-    # ref: https://github.com/PostHog/charts-clickhouse/issues/168
+    # ref: https://github.com/voarsh2/charts-clickhouse/issues/168
     "helm.sh/hook": post-install,post-upgrade
 spec:
   acme:
